@@ -1,0 +1,19 @@
+<div class="container">
+	<div class="col-md-12"></div>
+	<h1>Rapport</h1>
+	<div class="row">
+		<div class="col-md-3">
+			<div moment-picker="$ctrl.search_1" locale="fr" format="YYYY-MM-DD">
+			    CHOISIR UNE DATE {{ $ctrl.search_1 | amDateFormat:'DD-MM-YYYY'}}
+			</div>
+		</div>
+		<div class="col-md-3">
+			<button class="btn btn-primary" ng-click="$ctrl.generate()">Generer</button>
+		</div>
+	</div>
+	<div id="exportthis">
+		<div ng-repeat="item in $ctrl.list">
+			{{item}}
+		</div>
+	</div>
+</div>

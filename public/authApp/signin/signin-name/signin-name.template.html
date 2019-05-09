@@ -1,0 +1,21 @@
+<div class="spa-shell-main-content">
+  <div class="signin-card">
+    <img class="circle-mask" ng-src="{{$ctrl._user.avatar}}" width="96" height="96"/>
+    <form name="signin_form" novalidate>
+      <input type="email" name="email" ng-model="$ctrl._user.email" placeholder="Entrer votre email" autofocus="" required>
+      <em ng-show="signin_form.email.$touched && !signin_form.$valid">XXX@pasteur.ci</em>
+      <button class="rc-button rc-button-submit" type="submit" ng-click="$ctrl.signin()">
+        <span>Suivant</span>
+        <span ng-show="$ctrl.is_loading == true" class="ion-loading-c"></span>
+      </button>
+      <!-- <input class="rc-button rc-button-submit" type="submit" value="Suivant" ng-click="$ctrl.signin()"> -->
+    </form>
+  </div>
+  <div class="card-mask-wrap">
+    <div class="card-mask">
+      <div class="one-google">
+        <p>Pour se connecter, saisissez votre mail puis appuyez sur <b>"Suivant"</b></p>
+      </div>
+    </div>
+  </div>
+</div>

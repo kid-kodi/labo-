@@ -1,0 +1,110 @@
+<div class="container">
+	<div class="col-md-12">
+		<h1>Hi!</h1>
+		<div class="row">
+			<div class="col-md-4">
+				<div class="panel panel-default">
+					<div class="panel-body">
+						<h3>Nombre total d'échantillon</h3>
+						<p>{{$ctrl.data.length}}</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="panel panel-default">
+					<div class="panel-body">
+						<h3>Nombre total positif</h3>
+						<p>{{$ctrl.positif.length}}</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="panel panel-default">
+					<div class="panel-body">
+						<h3>Nombre total négatif</h3>
+						<p>{{$ctrl.negatif.length}}</p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+		<div class="panel panel-default">
+			<div class="panel-heading">Statistique</div>
+			<div class="panel-body">
+				<div class="row">
+					<div class="col-md-6">
+						<div class="panel panel-default">
+							<div class="panel-body">
+								<h3>Masculin</h3>
+								<p>{{($ctrl.patients|filter:{gender:"MASCULIN"}).length}}</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class="panel panel-default">
+							<div class="panel-body">
+								<h3>Feminin</h3>
+								<p>{{($ctrl.patients|filter:{gender:"FEMININ"}).length}}</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<table class="table">
+				<tr>
+					<td>TRANCHE D'AGE</td>
+					<td>NOMBRE</td>
+				</tr>
+				<tr>
+					<td>[0 - 5]</td>
+					<td>{{$ctrl.bb}}</td>
+				</tr>
+				<tr>
+					<td>[6 - 10]</td>
+					<td>{{$ctrl.enft}}</td>
+				</tr>
+				<tr>
+					<td>[11 - 20]</td>
+					<td>{{$ctrl.majeur}}</td>
+				</tr>
+				<tr>
+					<td>> 20</td>
+					<td>{{$ctrl.adult}}</td>
+				</tr>
+			</table>
+		</div>
+
+
+		<div class="panel panel-default">
+			<div class="panel-heading">Détails des échantillons</div>
+			<table class="table">
+				<tr>
+					<td>Echantillon</td>
+					<td>Positif</td>
+					<td>Négatif</td>
+				</tr>
+				<tr ng-repeat="s in $ctrl.sample_types">
+					<td>{{s.name}}</td>
+					<td>{{($ctrl.positif|filter:{sample_type:s._id}).length}}</td>
+					<td>{{($ctrl.negatif|filter:{sample_type:s._id}).length}}</td>
+				</tr>
+			</table>
+		</div>
+
+
+		<div class="panel panel-default">
+			<div class="panel-heading">Statistique client</div>
+			<table class="table">
+				<tr>
+					<td>Nom du client</td>
+					<td>Nombre</td>
+				</tr>
+				<tr ng-repeat="c in $ctrl.customers">
+					<td>{{c.display_as}}</td>
+					<td>{{($ctrl.orders|filter:{customer:c._id}).length}}</td>
+				</tr>
+			</table>
+		</div>		
+	</div>
+</div>

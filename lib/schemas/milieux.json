@@ -1,0 +1,30 @@
+{ "type" : "object",
+  "additionalProperties" : false,
+  "properties" : {
+    "_id" : {
+      "type"      : "string",
+      "maxLength" : 25
+    },
+    "classe" : {
+      "type"      : "string"
+    },
+    "code" : {
+      "type"      : "string"
+    },
+    "designation" : {
+      "type"      : "string"
+    },
+    "presentation" : {
+      "type"      : "string"
+    },
+    "tarif" : {
+      "type"      : "string"
+    },
+    "created_at" : {
+      "type"      : "string"
+    },
+    "created_by" : {
+      "type"      : "string"
+    }
+  }
+}

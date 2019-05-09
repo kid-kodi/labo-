@@ -1,0 +1,30 @@
+<div class="spa-shell-main-content">
+<div class="signin-card">
+  <a ng-show="{{$ctrl._user != undefined}}" ng-click="$ctrl.delete()">
+    <img alt="Back" src="images/ic_clear_black_24dp_1x.png">
+  </a>
+  <a ng-show="{{$ctrl._user == undefined}}" href="#/">
+    <img alt="Back" src="images/arrow_back_grey600_24dp.png">
+  </a>
+  <img class="circle-mask" ng-src="../{{$ctrl._user.avatar}}" width="96" height="96">
+  <form name="signin_form" novalidate>
+    <div>
+      <p id="profile-name">{{$ctrl._user.nom + ' (' + $ctrl._user.role + ')'}}</p>
+      <span id="email-display">{{$ctrl._user.email}}</span>
+    </div>
+    <input type="password" name="password" placeholder="Mot de passe" autofocus="" ng-model="$ctrl._user.password" required>
+    <em ng-show="signin_form.password.$touched && !signin_form.$valid">mot de passe obligatoire</em>
+    <button class="rc-button rc-button-submit" type="submit" ng-click="$ctrl.signin()">
+      <span>Connexion</span>
+      <span ng-show="$ctrl.is_loading == true" class="ion-loading-c"></span>
+    </button>
+  </form>
+</div>
+<div class="card-mask-wrap">
+  <div class="card-mask">
+    <div class="one-google">
+      <p>Pour se connecter, saisissez votre mot de passe puis appuyez sur <b>"Connexion"</b></p>
+    </div>
+  </div>
+</div>
+</div>

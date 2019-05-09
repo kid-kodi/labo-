@@ -1,0 +1,45 @@
+<div class="container">
+	<div class="col-md-6">
+		<h1>Formulaire d'analyse</h1>
+		<form novalidate>
+		  <div class="body">
+				<input type="hidden" name="" ng-model="$ctrl.item._id">
+				<div class="form-group">
+					<label class="control-label">Choisir le type d'echantillon</label>
+					<select class="form-control" ng-model="$ctrl.item.type">
+						<option value="1">HUMAIN</option>
+						<option value="2">ENVIRONEMENT</option>
+					</select>
+				</div>
+				<div class="form-group">
+					<label class="control-label">Nom de l'analyse</label>
+					<input class="form-control" type="text" ng-model="$ctrl.item.nom" >
+				</div>
+				<div class="form-group">
+					<label class="control-label">Nombre de B</label>
+			        <input class="form-control" type="text" ng-model="$ctrl.item.nbre_b">
+				</div>
+				<div class="form-group">
+					<label class="control-label">Nombre de jour pour le retrait</label>
+					<input class="form-control" type="text" ng-model="$ctrl.item.jour_retrait">
+				</div>
+				<div class="form-group">
+					<label class="control-label">Forfait particulier</label>
+					<input class="form-control" type="text" ng-model="$ctrl.item.forfait_particulier">
+				</div>
+				<div class="form-group">
+					<label class="control-label">Forfait assurance</label>
+					<input class="form-control" type="text" ng-model="$ctrl.item.forfait_assurance">
+				</div>
+				<div class="form-group">
+					<label class="control-label">Forfait société</label>
+					<input class="form-control" type="text" ng-model="$ctrl.item.forfait_societe">
+				</div>
+		  </div>
+		  <div class="footer">
+		    <a type="button" class="btn btn-default" href="#/item">Annuler</a>
+		    <button type="button" class="btn btn-primary" ng-click="$ctrl.update()">Enregistrer</button>
+		  </div>
+		</form>
+	</div>
+</div>

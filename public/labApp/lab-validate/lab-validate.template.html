@@ -1,0 +1,90 @@
+<div class="container">
+	<div class="col-md-12">
+		<div class="index-header">
+	        <h1>Validation</h1>
+	        <div class="buttons">
+	            <input class="form-control" type="text" ng-model="$ctrl.search" placeholder="Entrer le numero">
+	        </div>
+	    </div>
+		<div class="main">
+			<div class="panel panel-default" ng-repeat="item in $ctrl.list | filter:$ctrl.search:{status:1}">
+				<div class="panel-heading">
+					<div>
+						<h3>{{item.serial}}</h3>
+					</div>
+					<div class="actions" ng-if="item.status==1">
+						<button class="btn btn-default" ng-show="item.status==1" ng-click="$ctrl.changeStatus( item, 0 )">Verifier</button>
+						<button class="btn btn-success" ng-show="item.status==1" ng-click="$ctrl.changeStatus( item, 2 )">Valider</button>
+					</div>
+					<div class="actions" ng-if="item.status!=1">
+						<span ng-if="item.status==0">EN ATTENTE DE RESULTAT</span>
+		                <span ng-if="item.status==2">RESULTAT VALIDE</span>
+					</div>
+				</div>
+				<div class="panel-body">
+					<h3>{{item.patient.first_name + ' ' + item.patient.last_name}}</h3>
+					<p>
+						{{item.patient.sexe}}
+						<span>Age {{item.patient.age}}</span>
+						<span>Année de naissance {{item.patient.birthday}}</span>
+					</p>
+				</div>
+				<table class="posts-table table table-striped">
+					<thead>
+						<tr>
+							<th>NUMERO</th>
+							<th>ANALYSE</th>
+							<th>METHODE</th>
+							<th></th>
+							<th>SEUIL</th>
+							<th>RESULTAT</th>
+							<th>CONCLUSION</th>
+						</tr>
+					</thead>
+					<tr ng-repeat="prestation in item.prestations">
+						<td>{{prestation.sample_number}}</td>
+						<td>
+							<select class="form-control" ng-model="prestation.analyse" disabled>
+								<option value="">Aucune analyse</option>
+								<option ng-repeat="p in $ctrl.prestations" value="{{p._id}}">{{p.nom}}</option>
+							</select>
+						</td>
+						<td>
+							<select class="form-control" ng-model="prestation.method" disabled>
+								<option value="">Aucune méthode</option>
+								<option ng-repeat="m in $ctrl.methods|filter:prestation.analyse" value="{{m._id}}">{{m.nom}}</option>
+							</select>
+						</td>
+						<td>
+							<select class="form-control" ng-model="prestation.result_data" disabled>
+								<option value="">AUCUNE SELECTION</option>
+								<option value="POSITIF">POSITIF</option>
+								<option value="NEGATIF">NEGATIF</option>
+							</select>
+						</td>
+						<td>
+							<span ng-show="($ctrl.methods|filter:prestation.analyse)[0].is_quantity">{{($ctrl.methods|filter:prestation.analyse)[0].level}}</span>
+						</td>
+						<td>
+							<input class="form-control" type="text" ng-model="prestation.result_entity" placeholder="Entrer le resultat" disabled>
+						</td>
+						<td>
+							<select ng-model="prestation.conclusion" class="form-control" disabled>
+								<option value="ADN NON DETECTABLE"> ADN NON DETECTABLE</option>
+								<option value="Très faible 31 à 35"> Très faible 31 à 35</option>
+								<option value="Faible 27 à 30"> Faible 27 à 30</option>
+								<option value="Elevée 23 à 26"> Elevée 23 à 26</option>
+								<option value="Très elevée 15 à 22"> Très elevée 15 à 22</option>
+							</select>
+						</td>
+					</tr>
+				</table>
+				<div class="panel-footer">
+					<p>
+						<span>envoyé le {{item.sent_date}}</span>
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

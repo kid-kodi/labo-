@@ -1,0 +1,16 @@
+.spa-toast {
+  display: none;
+  position: fixed;
+  top: 40px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  z-index: 99;
+}
+
+.spa-toast span {
+  padding: 10px;
+  background: red;
+  color: #fff;
+  border-radius: 3px;
+}

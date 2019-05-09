@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>sysgas</title>
+  <!-- our third party styles -->
+  <link rel="stylesheet" href="styles/third/ionicons.min.css">
+  <link rel="stylesheet" type="text/css" href="styles/spa.signin.css">
+
+  <script src="../socket.io/socket.io.js"          ></script>
+  <script src="../vendors/angular.js"              ></script>
+  <script src="../vendors/angular-cookies.js"      ></script>
+  <script src="../vendors/angular-route.min.js"    ></script>
+  <script src="../vendors/angular-animate.min.js"  ></script>
+  <script src="../vendors/angular-resource.min.js" ></script>
+  <script src="../vendors/angular-locale_fr-fr.js" ></script>
+  <script src="../vendors/moment.js"               ></script>
+  <script src="../vendors/angular-moment.min.js"   ></script>
+
+  <script src="spa.module.js"   ></script>
+  <script src="spa.config.js"   ></script>
+  <script src="spa.constant.js" ></script>
+
+  <link href="toast/toast.css" rel="stylesheet"/>
+  <script src="toast/toast.component.js"></script>
+
+  <script src="signin/signin.module.js"                     ></script>
+  <script src="signin/signin.service.js"                    ></script>
+  <script src="signin/signin-name/signin-name.module.js"    ></script>
+  <script src="signin/signin-name/signin-name.component.js" ></script>
+  <script src="signin/signin-pass/signin-pass.module.js"    ></script>
+  <script src="signin/signin-pass/signin-pass.component.js" ></script>
+</head>
+<body ng-app="spa">
+  <toast></toast>
+  <div class="wrapper">
+    <div class="spa-shell-head">
+      <div class="spa-shell-head-logo"></div>
+    </div>
+    <div class="spa-shell-main">
+      <div class="spa-shell-main-banner">
+        <h1>Institut pasteur de côte d'ivoire</h1>
+        <h2>Connectez-vous à sysgas</h2>
+      </div>
+      <div ng-view></div>
+    </div>
+    <div class="spa-shell-foot">
+      <div class="content">
+        <ul id="footer-list">
+          <li>
+            <a href="#" target="_blank">
+            About
+            </a>
+          </li>
+          <li>
+            <a href="#" target="_blank">
+            Privacy
+            </a>
+          </li>
+          <li>
+            <a href="#" target="_blank">
+            Terms
+            </a>
+          </li>
+          <li>
+            <a href="#" target="_blank">
+            Help
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

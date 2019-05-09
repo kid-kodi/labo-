@@ -1,0 +1,39 @@
+<div class="container">
+	<div class="col-md-12">
+		<div class="index-header">
+		    <h1>Méthode</h1>
+		    <div class="buttons">
+				<a href="#/method/edit/0" class="btn btn-default">
+	                <i class="glyphicon glyphicon-plus"></i> Nouvelle méthode
+	            </a>
+	        </div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-4">
+				<input class="form-control" type="text" name="" ng-model="$ctrl.search" placeholder="Recherche">
+			  </div>
+		</div>
+
+		<table class="posts-table table table-striped">
+		  <thead>
+		    <tr>
+		      <th>Nom</th>
+		      <th>Analyse</th>
+		      <th></th>
+		    </tr>
+		  </thead>
+		  <tbody ng-repeat="c in $ctrl.list | filter:$ctrl.search">
+		    <tr>
+		      <td style="width:300px"><span>{{c.nom}}</span></td>
+		      <td><span>{{c.analyse.nom}}</span></td>
+		      <td class="text-right">
+		        <a href="#/method/edit/{{c._id}}" class="btn btn-default">
+	                <i class="glyphicon glyphicon-pencil"></i>
+	            </a>
+		      </td>
+		    </tr>
+		  </tbody>
+		</table>
+	</div>
+</div>

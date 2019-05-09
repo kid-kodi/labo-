@@ -1,0 +1,43 @@
+<div class="container">
+	<div class="col-md-12">
+		<div class="index-header">
+		    <h1>Analyse</h1>
+		    <div class="buttons">
+		    	<input class="form-control" type="text" name="" ng-model="$ctrl.search" placeholder="Recherche">
+				<a href="#/item/edit/0" class="btn btn-default">
+	                <i class="glyphicon glyphicon-plus"></i> Nouvelle analyse
+	            </a>
+	        </div>
+		</div>
+		<table class="posts-table table table-striped">
+		  <thead>
+		    <tr>
+		      <th>REGNE</th>
+		      <th>NOM</th>
+		      <th>NBRE B</th>
+		      <th>DELAI DE RETRAIT</th>
+		      <th>FORFAIT PARTICULIER</th>
+		      <th>FORFAIT ASSURANCE</th>
+		      <th>FORFAIT SOCIETE</th>
+		      <th></th>
+		    </tr>
+		  </thead>
+		  <tbody ng-repeat="c in $ctrl.list | filter:$ctrl.search">
+		    <tr>
+		      <td><span ng-show="c.type==1">HUMAIN</span><span ng-show="c.type==2">ENVIRONEMENTALE</span></td>
+		      <td style="width:300px"><span>{{c.nom}}</span></td>
+		      <td><span>{{c.nbre_b}}</span></td>
+		      <td><span>{{c.jour_retrait}}</span></td>
+		      <td><span>{{c.forfait_particulier}} F.CFA</span></td>
+		      <td><span>{{c.forfait_assurance}} F.CFA</span></td>
+		      <td><span>{{c.forfait_societe}} F.CFA</span></td>
+		      <td>
+		        <a href="#/item/edit/{{c._id}}" class="btn btn-default">
+	                <i class="glyphicon glyphicon-pencil"></i>
+	            </a>
+		      </td>
+		    </tr>
+		  </tbody>
+		</table>
+	</div>
+</div>

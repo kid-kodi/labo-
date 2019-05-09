@@ -1,0 +1,63 @@
+{
+  "_from": "angular-i18n@1.x",
+  "_id": "angular-i18n@1.7.5",
+  "_inBundle": false,
+  "_integrity": "sha512-52+Jpt8HRJV2bqSbSU6fWkwOvGzj/DxbNpKXxnTuCS9heuJrlm77BS/lhrF4BA8+Uudnh7npr5/yRELobP+8Yw==",
+  "_location": "/angular-i18n",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "range",
+    "registry": true,
+    "raw": "angular-i18n@1.x",
+    "name": "angular-i18n",
+    "escapedName": "angular-i18n",
+    "rawSpec": "1.x",
+    "saveSpec": null,
+    "fetchSpec": "1.x"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/angular-i18n/-/angular-i18n-1.7.5.tgz",
+  "_shasum": "2e27b64e1977a8c6b6b051c51d0175c6d4dc8252",
+  "_spec": "angular-i18n@1.x",
+  "_where": "/home/kodi/Workspace/snippet/angularjs",
+  "author": {
+    "name": "Angular Core Team",
+    "email": "angular-core+npm@google.com"
+  },
+  "bugs": {
+    "url": "https://github.com/angular/angular.js/issues"
+  },
+  "bundleDependencies": false,
+  "deprecated": false,
+  "description": "AngularJS module for internationalization",
+  "homepage": "http://angularjs.org",
+  "jspm": {
+    "shim": {
+      "angular-i18n": {
+        "deps": [
+          "angular"
+        ]
+      }
+    }
+  },
+  "keywords": [
+    "angular",
+    "framework",
+    "browser",
+    "internationalization",
+    "i18n",
+    "client-side"
+  ],
+  "license": "MIT",
+  "name": "angular-i18n",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/angular/angular.js.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "1.7.5"
+}

@@ -1,0 +1,36 @@
+<div class="posts-index">
+    <div class="index-header">
+        <h1>Saisie</h1>
+        <div class="buttons">
+            <a href="#/saisie/0" class="btn btn-default">
+                <i class="glyphicon glyphicon-plus"></i> Nouvelle saisie
+            </a>
+        </div>
+    </div>
+    <table class="posts-table table table-striped">
+        <tr>
+            <th>N.O.</th>
+            <th>Provenance</th>
+            <th>Date</th>
+            <th class="text-center">Statut</th>
+            <th></th>
+        </tr>
+        <tr ng-repeat="item in $ctrl.list">
+            <td>{{item.serial}}</td>
+            <td>{{item.provenance}}</td>
+            <td>{{item.sent_date | date:'dd/MM/yyyy'}}</td>
+            <td class="text-center">
+                <span ng-if="item.status==0">EN ATTENTE DE RESULTAT</span>
+                <span ng-if="item.status==1">EN ATTENTE DE VALIDATION</span>
+                <span ng-if="item.status==2">RESULTAT VALIDE</span>
+            </td>
+            <td class="action-icons">
+                <a ng-if="item.status==0" href="#/saisie/{{item._id}}" class="btn btn-default">
+                    <i class="glyphicon glyphicon-pencil"></i>
+                </a>
+                <i ng-if="item.status==1" class="glyphicon glyphicon-ok" />
+                <i ng-if="item.status==2" class="glyphicon glyphicon-ok" />
+            </td>
+        </tr>
+    </table>
+</div>

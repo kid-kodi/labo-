@@ -1,0 +1,43 @@
+<div class="container">
+	<div class="col-md-6">
+		<h1>Formulaire d'analyse</h1>
+		<form novalidate>
+		  <div class="body">
+		  	<div class="form-group">
+				<label class="control-label">Choisir une analyse</label>
+				<select class="form-control" ng-model="$ctrl.method.analyse_id">
+					<option value="">Aucune analyse</option>
+					<option ng-repeat="p in $ctrl.prestations" value="{{p._id}}">{{p.nom}}</option>
+				</select>
+			</div>
+			<input type="hidden" name="" ng-model="$ctrl.method._id">
+			<div class="form-group">
+				<label class="control-label">Nom de la méthode</label>
+				<input class="form-control" type="text" ng-model="$ctrl.method.nom" >
+			</div>
+			<hr>
+			<div>
+				<h3>Liste des resultats</h3>
+			    <!-- list of items with a button to remove that item -->
+			    <ul ng-show="$ctrl.method.resultats.length > 0">
+			        <li ng-repeat="item in $ctrl.method.resultats">
+			             {{item}}<button ng-click="$ctrl.remove($index)">Remove</button>
+			        </li>
+			    </ul>
+			    <div ng-show="$ctrl.method.resultats.length == 0">
+			    	<h3 class="text-center">Aucune données</h3>
+			    </div>
+			    <div class="flex-inline">
+			        <input class="form-control" type="text" ng-model="$ctrl.input" placeholder="Entrer le nom d'un resultat">
+			        <button class="btn btn-default" type="submit" ng-click="$ctrl.add()">Add</button>
+			    </div>
+			</div>
+		  </div>
+		  <hr>
+		  <div class="footer">
+		    <a type="button" class="btn btn-default"  href="#/method">Annuler</a>
+		    <button type="button" class="btn btn-primary" ng-click="$ctrl.update()">Enregistrer</button>
+		  </div>
+		</form>
+	</div>
+</div>

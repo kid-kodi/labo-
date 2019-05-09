@@ -1,0 +1,55 @@
+
+{ "type" : "object",
+  "additionalProperties" : false,
+  "properties" : {
+    "_id" : {
+      "type"      : "string",
+      "maxLength" : 25
+    },
+    "depot_id" : {
+      "type"      : "string"
+    },
+    "regne_id" : {
+      "type"      : "string"
+    },
+    "type_echantillon_id" : {
+      "type"      : "string"
+    },
+
+    "pathologie_id" : {
+      "type"      : "string"
+    },
+
+    "mod_temp_sou" : {
+      "type"      : "string"
+    },
+
+     "numero_epid" : {
+      "type"      : "string"
+    },
+    "jour" : {
+      "type"      : "string"
+      
+    },
+     "mois" : {
+      "type"      : "string"
+      
+    },
+     "annee" : {
+      "type"      : "string"
+      
+    },
+
+    "ref_lab" : {
+      "type"      : "string"
+
+    },
+
+    "created_at" : {
+      "type"      : "string"
+    },
+    "created_by" : {
+      "type"      : "string"
+    }
+  }
+}
