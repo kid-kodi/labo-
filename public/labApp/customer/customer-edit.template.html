@@ -1,0 +1,35 @@
+<div class="container">
+  <div class="col-md-6">
+    <h1></h1>
+    <form name="form" novalidate>
+    	<div class="form-group">
+			<label class="control-label">Choisir le type</label>
+			<select class="form-control" ng-model="$ctrl.customer.type" required>
+				<option value="">-- TYPE CLIENT --</option>
+				<option value="1">SOCIETE</option>
+				<option value="2">IPCI</option>
+				<option value="3">PERSONNE PHYSIQUE</option>
+				<option value="4">HOPITAL</option>
+				<option value="5">CLINIQUE</option>
+			</select>
+		</div>
+    	<div class="form-group">
+    		<label class="control-label">Raison sociale</label>
+    		<input class="form-control" type="text" name="display_as" ng-model="$ctrl.customer.display_as" required>
+    	</div>
+    	<div class="form-group">
+    		<label class="control-label">Téléphone</label>
+    		<input class="form-control" type="text" name="telephone" ng-model="$ctrl.customer.telephone" required>
+    	</div>
+    	<div class="form-group">
+    		<label class="control-label">Email adresse</label>
+    		<input class="form-control" type="email" name="email" ng-model="$ctrl.customer.email" required>
+    	</div>
+    	<hr>
+    	<div class="form-group">
+    		<a class="btn btn-default" href="#/customer">Annuler</a>
+    		<button class="btn btn-success" ng-disabled="!form.$valid" ng-click="$ctrl.update()">Enregistré</button>
+    	</div>
+    </form>
+  </div>
+</div>

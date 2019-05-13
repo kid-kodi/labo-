@@ -15,5 +15,7 @@ angular.module('labApp', [
 	'lab-test',
 	'lab-result',
 	'lab-validate',
-	'lab-report'
+	'lab-report',
+	'customer-list',
+	'customer-edit'
 	]);

@@ -1,0 +1,44 @@
+<div class="container">
+    <div class="col-md-12">
+        <div class="posts-index">
+            <div class="index-header">
+                <h1>Client</h1>
+                <div class="buttons">
+                    <input class="form-control" type="text" name="" ng-model="$ctrl.search" placeholder="Rechercher">
+                    <a href="#/customer/edit/0" class="btn btn-default">
+                        <i class="glyphicon glyphicon-plus"></i> Nouveau client
+                    </a>
+                </div>
+            </div>
+            <div ng-show="$ctrl.list.length == 0">
+            	<h1>Aucun client enregistré</h1>
+            </div>
+            <table class="posts-table table table-striped" ng-show="$ctrl.list.length > 0">
+                <tr>
+                    <th>TYPE.</th>
+                    <th>RAISON SOCIALE</th>
+                    <th>TELEPHONE</th>
+                    <th>EMAIL</th>
+                    <th class="text-rigth"></th>
+                </tr>
+                <tr ng-repeat="item in $ctrl.list | filter:$ctrl.search">
+                    <td>
+                    	<span ng-show="item.type==1">SOCIETE</span>
+						<span ng-show="item.type==2">IPCI</span>
+						<span ng-show="item.type==3">PERSONNE PHYSIQUE</span>
+						<span ng-show="item.type==4">HOPITAL</span>
+						<span ng-show="item.type==5">CLINIQUE</span>
+                    </td>
+                    <td>{{item.display_as}}</td>
+                    <td>{{item.telephone}}</td>
+                    <td>{{item.email}}</td>
+                    <td class="text-rigth action-icons">
+                        <a href="#/customer/edit/{{item._id}}" class="btn btn-default">
+                            <i class="glyphicon glyphicon-pencil"></i>
+                        </a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>

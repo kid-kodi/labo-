@@ -56,7 +56,8 @@ angular.
 			}
 			else{
 				ctrl.method = {
-					resultats : []
+					resultats : [],
+					is_quantity : false
 				}
 			}
 

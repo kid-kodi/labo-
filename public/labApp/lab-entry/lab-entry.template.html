@@ -105,7 +105,7 @@
 						<td>
 							<select ng-model="r.analyse" class="form-control">
 								<option value="">Aucune analyse</option>
-								<option ng-repeat="p in $ctrl.prestations" value="{{p._id}}">{{p.nom}}</option>
+								<option ng-repeat="p in $ctrl.prestations|filter:{type:$ctrl.order.patient.type}" value="{{p._id}}">{{p.nom}}</option>
 							</select>
 						</td>
 						<td>

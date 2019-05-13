@@ -69,12 +69,8 @@
 							<input class="form-control" type="text" ng-model="prestation.result_entity" placeholder="Entrer le resultat" disabled>
 						</td>
 						<td>
-							<select ng-model="prestation.conclusion" class="form-control" disabled>
-								<option value="ADN NON DETECTABLE"> ADN NON DETECTABLE</option>
-								<option value="Très faible 31 à 35"> Très faible 31 à 35</option>
-								<option value="Faible 27 à 30"> Faible 27 à 30</option>
-								<option value="Elevée 23 à 26"> Elevée 23 à 26</option>
-								<option value="Très elevée 15 à 22"> Très elevée 15 à 22</option>
+							<select class="form-control" ng-model="prestation.conclusion" ng-disabled="item.status>0">
+								<option ng-repeat="r in $ctrl.methods.resultats" value="{{r}}">{{r}}</option>
 							</select>
 						</td>
 					</tr>

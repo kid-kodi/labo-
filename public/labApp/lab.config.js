@@ -36,6 +36,15 @@ angular
 			.when('/method/edit/:id', {
 				template : '<lab-method-edit></lab-method-edit>'
 			})
+			.when('/customer', {
+				template : '<customer-list></customer-list>'
+			})
+			.when('/customer/edit/:id', {
+				template : '<customer-edit></customer-edit>'
+			})
+			.when('/customer/detail/:id', {
+				template : '<customer-detail></customer-detail>'
+			})
 			.otherwise('/dashboard')
 
 			//$locationProvider.html5Mode(true);

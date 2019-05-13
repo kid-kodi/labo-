@@ -15,6 +15,15 @@
 				<label class="control-label">Nom de la méthode</label>
 				<input class="form-control" type="text" ng-model="$ctrl.method.nom" >
 			</div>
+			<div class="form-group">
+				<label class="control-label">Seuil de positivité</label>
+				<input class="form-control" type="text" ng-model="$ctrl.method.level" >
+			</div>
+			<div class="form-group">
+				<label class="control-label">
+					<input type="checkbox" ng-model="$ctrl.method.is_quantity"> Données quantité ?
+				</label>
+			</div>
 			<hr>
 			<div>
 				<h3>Liste des resultats</h3>
